@@ -1,0 +1,60 @@
+#!/usr/bin/ruby
+
+module Week
+   FIRST_DAY = "Sunday"
+   def Week.weeks_in_month
+      puts "You have four weeks in a month"
+   end
+   def Week.weeks_in_year
+      puts "You have 52 weeks in a year"
+   end
+end
+
+class Decade
+include Week
+   no_of_yrs=10
+   def no_of_months
+      puts Week::FIRST_DAY
+      number=10*12
+      puts number
+   end
+end
+d1=Decade.new
+puts Week::FIRST_DAY
+Week.weeks_in_month
+Week.weeks_in_year
+d1.no_of_months
+
+# Mixins
+
+module A
+   def a1
+   	puts "module A a1"
+   end
+   def a2
+   	puts "module A a2"
+   end
+end
+module B
+   def b1
+   	puts "module B b1"
+   end
+   def b2
+   	puts "module B b2"
+   end
+end
+
+class Sample
+include A
+include B
+   def s1
+   	puts "Sample s1"
+   end
+end
+
+samp=Sample.new
+samp.a1
+samp.a2
+samp.b1
+samp.b2
+samp.s1
